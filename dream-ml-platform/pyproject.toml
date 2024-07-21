@@ -1,0 +1,56 @@
+[tool.poetry]
+authors = ["Yoni Pick"]
+description = "A RESTful API using Flask"
+name = "dream-ml-platfoem"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+flask = "3.0.2"
+python = "~3.9.0"
+pandas = "^2.2.2"
+sklearn = "^0.0.post12"
+scikit-learn = "^1.5.1"
+pydantic = "1.9.1"
+
+[tool.poetry.group.dev.dependencies]
+bandit = "1.7.0"
+black = "22.3.0"
+coverage = "5.5"
+flake8 = "3.9.2"
+flake8-bugbear = "21.4.3"
+flake8-isort = "4.0.0"
+flake8-typing-imports = "1.10.1"
+isort = "5.9.3"
+mypy = "1.4.1"
+pep8-naming = "0.12.0"
+pylint = "2.15.10"
+pylint-pytest = "1.1.2"
+tox = "3.24.1"
+types-pyyaml = "5.4.3"
+types-requests = "2.25.6"
+
+[[tool.poetry.source]]
+default = true
+name = "arti"
+url = "https://jf.originai.co/artifactory/api/pypi/pypi/simple"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.pytest.ini_options]
+addopts = "--cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.mypy]
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
+strict = true
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.isort]
+line_length = 100
+profile = "black"
