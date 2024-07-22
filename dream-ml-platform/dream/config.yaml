@@ -13,3 +13,5 @@ logging:
     root:
         level: "DEBUG"
         handlers: ["console"]
+models:
+    model_path: "/dream/models/model.pkl"
